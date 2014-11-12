@@ -6,7 +6,7 @@
 ##############
 
 SITE_DIR="/var/www/html" # The path to the web application on the server (default: /var/www/html)
-SITE_PUB_DIR="/var/www/html/geophalcon.local/public" # The path to the application public web folder.
+SITE_PUB_DIR="/var/www/html/geonameapi.local/public" # The path to the application public web folder.
 VAGRANT_DATA_DIR="/vagrant/vagrant"
 DB_NAME="geoname" #name of mysql DB.
 
@@ -32,7 +32,7 @@ mysqladmin -u root password root # set mysql root password to root
 # PHP
 yum install -y php php-mysql php-pdo
 
-# Create GeoPhalcon MySql user and database via install script (deprecated, now we create db named "geoname")
+# Create geonameapi MySql user and database via install script (deprecated, now we create db named "geoname")
 # php $VAGRANT_DATA_DIR/mysql/install.php
 
 

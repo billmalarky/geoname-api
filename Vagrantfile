@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #=========================================================================================#
 
   # HOSTNAME - Change to your local development URL
-  config.vm.hostname = "geophalcon.local"
+  config.vm.hostname = "geonameapi.local"
 
   # INTERNAL NETWORK - The IP to use when automatically configuring your hosts file
   config.vm.network :private_network, ip: "192.168.100.100"
