@@ -1,0 +1,4 @@
+/.vagrant
+/nbproject/
+/geoname-import/geoname-db.sql
+/phalcon/*
