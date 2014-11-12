@@ -79,9 +79,10 @@ ln -s $VAGRANT_DATA_DIR/php/phalcon.ini /etc/php.d/phalcon.ini
 
 # Download geonames data and import into mysql
 cd /vagrant/geoname-import/
-sh geonames_importer.sh -a download-data
+#sh geonames_importer.sh -a download-data
 sh geonames_importer.sh -a create-db -u root -p root
-sh geonames_importer.sh -a import-dumps -u root -p root
+#sh geonames_importer.sh -a import-dumps -u root -p root
+mysql -u root -proot --local-infile=1 geoname < geonames_import_example_data.sql
 
 # Restart services
 service httpd restart
