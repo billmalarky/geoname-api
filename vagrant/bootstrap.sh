@@ -84,6 +84,17 @@ sh geonames_importer.sh -a create-db -u root -p root
 #sh geonames_importer.sh -a import-dumps -u root -p root
 mysql -u root -proot --local-infile=1 geoname < geonames_import_example_data.sql
 
+# Install sphinx and php modules
+yum install -y sphinx
+cp /etc/sphinx/sphinx.conf /etc/sphinx/sphinx.conf.orig
+rm -rf /etc/sphinx/sphinx.conf
+ln -s $VAGRANT_DATA_DIR/sphinx/sphinx.conf /etc/sphinx/sphinx.conf
+mkdir -p /var/data/sphinx
+service searchd start
+indexer --config /vagrant/vagrant/sphinx/sphinx.conf --all --rotate
+#yum install -y sphinx-php.x86_64
+yum install -y php-pecl-sphinx.x86_64
+
 # Restart services
 service httpd restart
 service mysqld restart
